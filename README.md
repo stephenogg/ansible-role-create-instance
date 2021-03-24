@@ -1,6 +1,7 @@
 # ansible-role-create-instance
-Create a nova compute instance using openstack collection commands. Optionally create and attach a new volume
 ------------
+Create a nova compute instance using openstack collection commands. Optionally create and attach a new volume
+
 Dependencies
 ------------
 
