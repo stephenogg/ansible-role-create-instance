@@ -1,4 +1,4 @@
-[![Ansible Role](https://img.shields.io/ansible/role/41085.svg)](https://github.com/steveo-sudo/create_instance/)
+[![Ansible Role]
 
 # ansible-role-create-instance
 Create a nova compute instance using openstack collection commands. Optionally create and attach a new volume
