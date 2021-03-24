@@ -1,6 +1,9 @@
 # ansible-role-create-instance
 Create a nova compute instance using openstack collection commands. Optionally create and attach a new volume
 
+Dependencies
+------------
+
 # Role Variables
 Default variables for all the infomation required to create a new compute instance (nova) on openstack. 
 create_compute_instance: True
