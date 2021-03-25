@@ -14,7 +14,7 @@ Default variables for all the infomation required to create a new compute instan
 - `create_compute_instance: True`
 - `create_new_volume`: Whether to create a new (2nd) volume along with the compute instance, default `False`.
   Optional variable to create a new volume, if `true`, then the role creates a new CINDER volume called `volume_name` of size `volume_size` on device `device`.
-- `floating_ip: ''` Passing an empty string creaets an instance with only an internal IP address.
+- `floating_ip: ''` Passing an empty string creates an instance with only an internal IP address.
 - `flavour: 'p4-6gb'` Choices for arbutus are p1-1.5gb, p2-3gb, p4-6gb, p8-12gb
 - `image: Ubuntu-20.04-Focal-x64-2020-12` Images for CentOS7 CentOS8 Ubuntu18, Debian10 & Fedora32 available.
 - `server_name: 'new_server'`
