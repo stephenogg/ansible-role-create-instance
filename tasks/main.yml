@@ -17,7 +17,7 @@
         key_name: "{{ keypair }}"
         timeout: 200
         flavor: "{{ flavour }}"
-        network: def-steveogg-dev-network 
+        network: "{{ netwrok }}" 
         security_groups:
           - default
           - web
