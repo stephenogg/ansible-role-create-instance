@@ -17,7 +17,7 @@
         key_name: "{{ keypair }}"
         timeout: 200
         flavor: "{{ flavour }}"
-        network: "{{ netwrok }}" 
+        network: "{{ network }}" 
         security_groups:
           - default
           - web
