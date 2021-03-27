@@ -70,7 +70,6 @@
         name: "{{ floating_ip }}"
         key: "{{ output2.stdout_lines[0] }}"
         path: "~/.ssh/known_hosts"
-  when: create_compute_instance == True
   
 #----------------------------------      END create new instance      --------------------      
 
