@@ -12,6 +12,7 @@
         state: present
         cloud: computecanada_arbutus #connection information defined in cloud.yaml
         name: "{{ server_name }}"    # I put this into ~/.config/openstack/
+        description: "{{ description }}"
         image: "{{ image }}"
         reuse_ips: false
         key_name: "{{ keypair }}"
