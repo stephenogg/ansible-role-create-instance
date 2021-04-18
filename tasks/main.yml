@@ -75,18 +75,18 @@
   block:
     - name: create a new CINDER volume
       openstack.cloud.volume:
-        cloud: computecanada_arbutus
+        cloud: "{{ cloud }}"
         state: present
-        size:  "{{ volume_size_gb }}"   #(in Gb)
-        display_name: "{{ volume_name }}"
-        display_description: "{{ volume_description }}"
+        size:  "{{ second_volume_size_gb }}"   #(in Gb)
+        display_name: "{{ second_volume_name }}"
+        display_description: "{{ second_volume_description }}"
         
-    - name: "Attach Volume: {{ volume_name }} to Server: {{ server_name }} on {{ device }}"
+    - name: "Attach Volume: {{ second_volume_name }} to Server: {{ server_name }} on {{ device }}"
       openstack.cloud.server_volume:
-        cloud: computecanada_arbutus
+        cloud: "{{ cloud }}"
         state: present
         server: "{{ server_name }}"
-        volume: "{{ volume_name }}"
+        volume: "{{ second_volume_name }}"
         device: "{{ device }}"
   when: create_new_volume == True
         
