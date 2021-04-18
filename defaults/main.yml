@@ -2,14 +2,34 @@
 # Defaults file for openstack.create_instance
 
 vars:
-  create_new_volume: False     
+  cloud: "computecanada_arbutus
+  create_second_volume: False     
   floating_ip: ''
   flavour: "p4-6gb"
   image: Ubuntu-20.04-Focal-x64-2020-12
   server_name: "new_server"
   description: ''
   keypair: "SteveOKeyPairCCOMERO"
-  network: "def-steveogg-dev-network"
+  network: ''
   volume_name: "new_volume"     
   volume_size_gb: 100
   device: "/dev/vdb"  # each flavor already has a 20Gb disk mounted on /dev/vda
+
+
+    - name: create an instance
+      openstack.cloud.server:
+        state: present
+        cloud: "{{ cloud }}"
+        name: "{{ server_name }}"
+        #description: "{{ server_description }}"
+        image: "{{ image }}"
+        boot_from_volume: true
+        volume_size: "{{ boot_volume_size }}"
+        reuse_ips: false
+        key_name: "{{ keypair }}"
+        timeout: 200
+        flavor: "{{ flavour }}"
+        network: "{{ network }}" 
+        security_groups: "{{ security_group_list }}"      
+        floating_ips:
+          - "{{ floating_ip }}"
