@@ -7,24 +7,21 @@
     
 - name: Create a Compute Instance, update local known_hosts with new ssh fingerprint
   block:
-    - name: create an instance
+      - name: create an instance
       openstack.cloud.server:
         state: present
-        cloud: computecanada_arbutus #connection information defined in cloud.yaml
-        name: "{{ server_name }}"    # I put this into ~/.config/openstack/
-        description: "{{ description }}"
+        cloud: "{{ cloud }}"
+        name: "{{ server_name }}"
+        #description: "{{ server_description }}"
         image: "{{ image }}"
+        boot_from_volume: true
+        volume_size: "{{ boot_volume_size }}"
         reuse_ips: false
         key_name: "{{ keypair }}"
         timeout: 200
         flavor: "{{ flavour }}"
         network: "{{ network }}" 
-        security_groups:
-          - default
-          - web
-          - ssh
-          - omero
-          - ping        
+        security_groups: "{{ security_group_list }}"      
         floating_ips:
           - "{{ floating_ip }}"
 
