@@ -88,7 +88,7 @@
         server: "{{ server_name }}"
         volume: "{{ second_volume_name }}"
         device: "{{ device }}"
-  when: create_second_volume == True
+  when: create_second_volume == true
         
                
              
