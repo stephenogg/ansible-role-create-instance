@@ -8,22 +8,22 @@
 - name: Create a Compute Instance, update local known_hosts with new ssh fingerprint
   block:
       - name: create an instance
-      openstack.cloud.server:
-        state: present
-        cloud: "{{ cloud }}"
-        name: "{{ server_name }}"
-        #description: "{{ server_description }}"
-        image: "{{ image }}"
-        boot_from_volume: true
-        volume_size: "{{ boot_volume_size }}"
-        reuse_ips: false
-        key_name: "{{ keypair }}"
-        timeout: 200
-        flavor: "{{ flavour }}"
-        network: "{{ network }}" 
-        security_groups: "{{ security_group_list }}"      
-        floating_ips:
-          - "{{ floating_ip }}"
+        openstack.cloud.server:
+          state: present
+          cloud: "{{ cloud }}"
+          name: "{{ server_name }}"
+          #description: "{{ server_description }}"
+          image: "{{ image }}"
+          boot_from_volume: true
+          volume_size: "{{ boot_volume_size }}"
+          reuse_ips: false
+          key_name: "{{ keypair }}"
+          timeout: 200
+          flavor: "{{ flavour }}"
+          network: "{{ network }}" 
+          security_groups: "{{ security_group_list }}"      
+          floating_ips:
+            - "{{ floating_ip }}"
 
 # Pause to allow network time to activate (10s is too short)                
     - name: Pause to allow network to become active
